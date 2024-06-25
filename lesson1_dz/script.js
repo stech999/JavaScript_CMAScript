@@ -14,18 +14,12 @@ console.log(Math.min(...arr));
 
 function createCounter() {
     let count = 0;
-    function numberValue(count) {
-        return count;
-    }
-    function increment(count) {
-        return count += 1;
-    }
-    function decrement(count) {
-        return count -= 1;
-    }
+    numberValue = count => count;
+    decrement = count => count + 1;
+    increment = count => count - 1;
+    
     return { increment, decrement, numberValue };
 }
-
 const resultat = createCounter();
 console.log(resultat.decrement(1));
 console.log(resultat.increment(1));
