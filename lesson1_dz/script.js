@@ -12,24 +12,24 @@ console.log(Math.min(...arr));
 // на 1. Значение счетчика должно быть доступно только через методы объекта,
 //     а не напрямую.
 
-function createCounter(number) {
-    function numberValue(number) {
-        return number;
+function createCounter() {
+    let count = 0;
+    function numberValue(count) {
+        return count;
     }
-    function increment(number) {
-        return number += 1;
+    function increment(count) {
+        return count += 1;
     }
-    function decrement(number) {
-        return number -= 1;
+    function decrement(count) {
+        return count -= 1;
     }
     return { increment, decrement, numberValue };
 }
 
-const value = 5;
 const resultat = createCounter();
-console.log(`Сама цифра: ${resultat.numberValue(value)}`);
-console.log(`увеличиваем цифру ${value} на 1 итог: ${resultat.increment(value)}`);
-console.log(`уменьшаем цифру ${value} на 1 итог: ${resultat.decrement(value)}`);
+console.log(resultat.decrement(1));
+console.log(resultat.increment(1));
+
 
 // 3) Дополнительное задание, выполняем только если проходили работу с DOM.
 // Напишите рекурсивную функцию findElementByClass, которая принимает корневой
