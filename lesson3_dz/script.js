@@ -259,9 +259,8 @@ class Product {
     }
 }
 class Order {
-    constructor(id, products) {
+    constructor(id) {
         this.id = id;
-        this.products = [];
     }
     addProduct(product) {
         this.products.push(product);
